@@ -1,0 +1,17 @@
+---
+- name: Deploy Nginx Ingress and Hello World application
+  hosts: localhost
+  tasks:
+    - name: Install Nginx Ingress Controller
+      command: helm install nginx-ingress ingress-nginx/ingress-nginx
+
+    - name: Apply Hello World Deployment
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ lookup('file', 'hello-world-deployment.yaml') }}"
+
+    - name: Apply Hello World Ingress
+      kubernetes.core.k8s:
+        state: present
+        definition: "{{ lookup('file', 'hello-world-ingress.yaml') }}"
+
