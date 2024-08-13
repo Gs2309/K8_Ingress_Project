@@ -9,7 +9,7 @@ This project sets up a Kubernetes cluster using Minikube with Docker deploys an 
 
  ## How to Run
 
-1. Clone the repository.
+1. Update the Linux system and Plan your directory structure.
 2. Install the necessary tools.
 3. Start Minikube with 2 nodes.
 4. Run the Ansible playbook:
