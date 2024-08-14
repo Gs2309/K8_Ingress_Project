@@ -10,7 +10,7 @@ This project sets up a Kubernetes cluster using Minikube with Docker deploys an 
  ## How to Run
 
 1. Update the Linux system and Plan your directory structure.
-2. Install the necessary tools.
+2. Install the necessary tools (Helm, Docker, etc).
 3. Start Minikube with 2 nodes.
 4. Run the Ansible playbook:
 
@@ -35,6 +35,10 @@ ansible-playbook ansible/k8s-setup.yml   (Inclusive of application deployment TA
 └── README.md
 
 # VERIFY the Project:
+
+Post defining the helm chart, check the Helm Charts:
+
+-> helm list -n default   (As the deffault NS is used across all the resources in the project)
 
 1. Verify Minikube is running
  -> minikube status
